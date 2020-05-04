@@ -12,4 +12,4 @@
 - [NinjaMock](https://ninjamock.com/) NinjaMock
 
 ### Gh Page :
--(https://ucc-labcompu2.github.io/proyectos2020-leszezynski-saboretti/)
+- [pagina](https://ucc-labcompu2.github.io/proyectos2020-leszezynski-saboretti/)
