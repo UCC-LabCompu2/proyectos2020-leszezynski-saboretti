@@ -5,6 +5,7 @@
 - Bruno Saboretti
     
 ## tecnologia usada :
-- Git Hub
-- Webstorm
-- Google
+- [Git Hub](https://github.com/)
+- [Webstorm](https://www.jetbrains.com/es-es/webstorm/)
+- [Google](https://www.google.com/)
+- [NinjaMock](https://ninjamock.com/)
