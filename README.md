@@ -7,6 +7,6 @@
     
 ## tecnologia usada :
 - [Git Hub](https://github.com/) Git Hub
-- [Webstorm](https://www.jetbrains.com/es-es/webstorm/) Webstorm 
+- [Webstorm](https://www.jetbrains.com/es-es/webstorm/) Webstorm (HTML CSS)
 - [Google](https://www.google.com/) Google/Imagenes
 - [NinjaMock](https://ninjamock.com/) NinjaMock
