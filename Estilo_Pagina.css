@@ -1,0 +1,21 @@
+body{
+    background-color: grey;
+    text-align: right;
+}
+#logo{
+    float: left;
+    width: 80px;
+
+}
+.reglas{
+    text-align: right;
+}
+.Titulo{
+    text-align: left;
+    font-family: 'Kanit', sans-serif;
+}
+#boton{
+    float: left;
+    width: 80px;
+
+}
