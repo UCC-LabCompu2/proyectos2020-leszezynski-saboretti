@@ -1,10 +1,10 @@
-### Buscaminas
+# Buscaminas
 
-# los autores de la pagina son: 
+## los autores de la pagina son: 
 - Nicolas Leszezynski 
 - Bruno Saboretti
     
-# tecnologia usada :
+## tecnologia usada :
 - Git Hub
 - Webstorm
 - Google
