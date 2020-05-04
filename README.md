@@ -1,7 +1,10 @@
-##Buscaminas
-Nicolas Leszezynski - Bruno Saboretti
+### Buscaminas
+
+# los autores de la pagina son: 
+- Nicolas Leszezynski 
+- Bruno Saboretti
     
-tecnologia usada :
-Git Hub
-Webstorm
-Google
+# tecnologia usada :
+- Git Hub
+- Webstorm
+- Google
