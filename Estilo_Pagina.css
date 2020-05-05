@@ -1,21 +1,28 @@
 body{
-    background-color: grey;
-    text-align: right;
-}
-#logo{
-    float: left;
-    width: 80px;
+    background-image: url("Imagenes/back.png");
 
 }
+div{
+}
+
+#logo{
+    float: left;
+    width: 152px;
+}
 .reglas{
-    text-align: right;
+    text-align: left;
 }
 .Titulo{
+    font-size: 68px;
     text-align: left;
     font-family: 'Kanit', sans-serif;
 }
 #boton{
     float: left;
     width: 80px;
+
+}
+.configuracion{
+    text-align: right;
 
 }
