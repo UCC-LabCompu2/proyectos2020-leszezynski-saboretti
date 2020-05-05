@@ -16,6 +16,7 @@ div{
     font-size: 68px;
     text-align: left;
     font-family: 'Kanit', sans-serif;
+    color: darkgrey;
 }
 #boton{
     float: left;
@@ -24,5 +25,6 @@ div{
 }
 .configuracion{
     text-align: right;
+    margin: 15px 35px;
 
 }
