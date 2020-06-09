@@ -5,6 +5,7 @@
     <title>Buscaminas</title>
     <link rel="stylesheet" href="Estilo_Pagina.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="Juego.js"></script>
 
 </head>
 <body>
@@ -17,23 +18,25 @@
 </header>
 
 <div class="configuracion">
-<p>
-    ancho: <input type="text" name="Ancho" placeholder="Ancho">
+    <p>
+        <label for="posicionX"> Ancho</label> = <input id="posicionX" type="text" name="inp_x">
+    </p>
+    <p>
+        <label for="posicionY"> Alto</label> = <input id="posicionY" type="text" name="inp_y">
+    </p>
+    <p>
+        minas: <input type="text" name="Minas" placeholder="Minas">
+    </p>
 
-</p>
-<p>
-    alto: <input type="text" name="Alto" placeholder="Alto">
-</p>
-<p>
-    minas: <input type="text" name="Minas" placeholder="Minas">
-</p>
-
-<p>
-    <button type="button"> ¡Comenzar! </button>
-</p>
+    <p>
+        <button type="button" onclick="DibujarCuadriculado()">
+            Comenzar!
+        </button>
+    </p>
 </div>
 
-<canvas>
+<canvas id="myCanvas" class="ejer" width="401px" height="401px">
+    Tu navegador no soporta el tag de HTML5 canvas :(
 </canvas>
 
 </div>
