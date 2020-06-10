@@ -19,18 +19,22 @@
 
 <div class="configuracion">
     <p>
-        <label for="posicionX"> Ancho</label> = <input id="posicionX" type="text" name="inp_x">
+        <label for="posicion"> Celdas</label> = <input id="posicion" type="text" name="inp_x"placeholder="Celdas">
     </p>
     <p>
-        <label for="posicionY"> Alto</label> = <input id="posicionY" type="text" name="inp_y">
+        <label for="Minas"> Minas</label> = <input type="text" id="Minas" name="bombas" placeholder="Minas">
     </p>
     <p>
-        minas: <input type="text" name="Minas" placeholder="Minas">
+        <label for="vidas"> Vidas</label> = <input id="vidas" type="text" name="Hp"placeholder="Vidas">
     </p>
-
     <p>
         <button type="button" onclick="DibujarCuadriculado()">
             Comenzar!
+        </button>
+    </p>
+    <p>
+        <button type="button" onclick="LimpiarCanvas()">
+            Limpiar Canvas
         </button>
     </p>
 </div>
