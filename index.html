@@ -18,14 +18,15 @@
 </header>
 
 <div class="configuracion">
+
     <p>
-        <label for="posicion"> Celdas</label> = <input id="posicion" type="text" name="inp_x"placeholder="Celdas">
-    </p>
-    <p>
-        <label for="Minas"> Minas</label> = <input type="text" id="Minas" name="bombas" placeholder="Minas">
-    </p>
-    <p>
-        <label for="vidas"> Vidas</label> = <input id="vidas" type="text" name="Hp"placeholder="Vidas">
+        Seleccione un nivel:
+        <select name="posicion" id="posicion" onchange="crearTablero(this.value)">
+            <option value=5>1</option>
+            <option value=10>2</option>
+            <option value=15>3</option>
+
+        </select>
     </p>
     <p>
         <button type="button" onclick="DibujarCuadriculado()">
@@ -35,6 +36,23 @@
     <p>
         <button type="button" onclick="LimpiarCanvas()">
             Limpiar Canvas
+        </button>
+    </p>
+    <p>
+        Direccion :
+        Arriba <input type="radio" name="Direccion" value="Arriba">
+        Abajo <input type="radio" name="Direccion" value="Abajo">
+        Izquierda<input type="radio" name="Direccion" value="Izquierda">
+        Derecha<input type="radio" name="Direccion" value="Derecha">
+    </p>
+    <p>
+        <button type="button" onclick="Mover()">
+            Realizar Movimiento
+        </button>
+    </p>
+    <p>
+        <button type="button" onclick="Explorar()">
+            Explorar
         </button>
     </p>
 </div>
