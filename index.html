@@ -20,15 +20,6 @@
 <div class="configuracion">
 
     <p>
-        Seleccione un nivel:
-        <select name="posicion" id="posicion" onchange="crearTablero(this.value)">
-            <option value=5>1</option>
-            <option value=10>2</option>
-            <option value=15>3</option>
-
-        </select>
-    </p>
-    <p>
         <button type="button" onclick="DibujarCuadriculado()">
             Comenzar!
         </button>
@@ -39,11 +30,18 @@
         </button>
     </p>
     <p>
-        Direccion :
-        Arriba <input type="radio" name="Direccion" value="Arriba" onclick="MoverArriba()">
-        Abajo <input type="radio" name="Direccion" value="Abajo" onclick="MoverAbajo()">
-        Izquierda<input type="radio" name="Direccion" value="Izquierda" onclick="MoverIzquierda()">
-        Derecha<input type="radio" name="Direccion" value="Derecha" onclick="MoverDerecha()">
+        <button type="button" onclick="MoverArriba()">
+            Arriba
+        </button>
+        <button type="button" onclick="MoverAbajo()">
+            Abajo
+        </button>
+        <button type="button" onclick="MoverIzquierda()">
+           Izquierda
+        </button>
+        <button type="button" onclick="MoverDerecha()">
+            Derecha
+        </button>
     </p>
     <p>
         <button type="button" onclick="Mover()">

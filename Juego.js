@@ -8,8 +8,6 @@
 function DibujarCuadriculado() {
     var canvas = document.getElementById(elementid = "myCanvas");
     var ctx = canvas.getContext("2d");
-    var Alto =document.getElementById(elementid ="posicion").value;
-    var Ancho =document.getElementById(elementid ="posicion").value;
     var alturaMax = canvas.height;
     var anchuraMax = canvas.width;
 
@@ -20,7 +18,7 @@ function DibujarCuadriculado() {
         ctx.lineTo(x = anchuraMax, y = i);
         ctx.strokeStyle = "#000000";
         ctx.stroke();
-        i = i + 400/Alto;
+        i = i + 400/10;
     }
     ctx.closePath();
 
@@ -31,7 +29,7 @@ function DibujarCuadriculado() {
         ctx.lineTo(x = i, y = alturaMax);
         ctx.strokeStyle = "#000000";
         ctx.stroke();
-        i = i + 400/Ancho;
+        i = i + 400/10;
     }
     ctx.closePath();
 }
