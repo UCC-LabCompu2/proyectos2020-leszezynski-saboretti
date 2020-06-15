@@ -1,5 +1,5 @@
-# Buscaminas
-- Buscaminas es un videojuego para un jugador inventado por Robert Donner en 1989. El objetivo del juego es despejar un campo de minas sin   detonar ninguna. El juego ha sido programado para muchos sistemas operativos, pero debe su popularidad a las versiones que vienen con     Microsoft Windows desde su versión 3.1. 
+# YAIG!
+- Es un juego que se basa en ir buscando un tesoro sin encontrarte on bombas
 
 ## los autores de la pagina son: 
 - Nicolas Leszezynski 
@@ -12,4 +12,4 @@
 - [NinjaMock](https://ninjamock.com/) NinjaMock
 
 ### Gh Page :
-- [buscaminas](https://ucc-labcompu2.github.io/proyectos2020-leszezynski-saboretti/)
+- [YAIG!](https://ucc-labcompu2.github.io/proyectos2020-leszezynski-saboretti/)
