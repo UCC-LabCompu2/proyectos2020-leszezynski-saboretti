@@ -48,6 +48,13 @@ function LimpiarCanvas() {
     canvas.width = canvas.width;
 
 }
+/**
+ * Genera uno de los 3 tablero dependiendo de la desicion del ususario
+ * @method crearTablero
+ * @param {string}
+ * @param {number} value-el numero de celdas
+ * @return tablero
+ */
 function crearTablero(value){
     if(value==5){
         var tablero=
@@ -90,4 +97,49 @@ function crearTablero(value){
                 [0,0,0,0,1,0,0,0,0,0,1,0,0,0,1]];
     }
     return tablero;
+}
+var t=creartablero(value);
+var pX=0;
+var pY=0;
+var vidas=(document.getElementById(elementid="posicion").value)/2+1;
+
+function MoverIzquierda(){
+    if(pX>0)pX=pX-1;
+    if (t[pX][pY]==1) {
+        vidas = vidas - 1;
+        alert("BOMBA!");
+    }
+
+}
+function MoverDerecha(){
+    if(pX<(document.getElementById(elementid="posicion").value)-1)pX=pX+1;
+    if (t[pX][pY]==1){
+        vidas=vidas-1;
+        alert("BOMBA!");
+    }
+
+}
+function MoverArriba(){
+    if(pY>0)pY=pY-1;
+    if (t[pX][pY]==1) {
+        vidas = vidas - 1;
+        alert("BOMBA!");
+    }
+
+}
+function MoverAbajo(){
+    if(pY<(document.getElementById(elementid="posicion").value)-1)pY=pY+1;
+    if (t[pX][pY]==1) {
+        vidas = vidas - 1;
+        alert("BOMBA!");
+
+    }
+}
+function Explorar(){
+    var contador=0;
+    if(pX>0&&t[pX-1][pY]==1)contador++;
+    if(pY>0&&t[pX][pY-1]==1)contador++;
+    if(pY<(document.getElementById(elementid="posicion").value)&&t[pX][pY+1])contador++;
+    if(pX<(document.getElementById(elementid="posicion").value)&&t[pX+1][pY])contador++;
+    return contador;
 }
