@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Buscaminas</title>
+    <title>YAIG!</title>
     <link rel="stylesheet" href="Estilo_Pagina.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap" rel="stylesheet">
     <script type="text/javascript" src="Juego.js"></script>
@@ -10,27 +10,49 @@
 </head>
 <body>
 <header>
-    <img id="logo" src="Imagenes/iconomina.png">
-    <h1 class="Titulo">Buscaminas</h1>
+    <img id="logo" src="Imagenes/iconoYAIG.png">
+    <h1 class="Titulo">YAIG!</h1>
     <nav>
         <a href="reglas.html"><img id="boton" src="Imagenes/Pregunta.png" ></a>
     </nav>
 </header>
 
 <div class="configuracion">
-    <p>
-        <label for="posicionX"> Ancho</label> = <input id="posicionX" type="text" name="inp_x">
-    </p>
-    <p>
-        <label for="posicionY"> Alto</label> = <input id="posicionY" type="text" name="inp_y">
-    </p>
-    <p>
-        minas: <input type="text" name="Minas" placeholder="Minas">
-    </p>
 
     <p>
         <button type="button" onclick="DibujarCuadriculado()">
             Comenzar!
+        </button>
+    </p>
+    <p>
+        <button type="button" onclick="LimpiarCanvas1()">
+            Limpiar Canvas
+        </button>
+    </p>
+
+    <p>
+
+        <button type="button" onclick="MoverArriba()" class="Arriba" >
+            Arriba
+        </button>
+
+    </p>
+    <p>
+        <button type="button" onclick="MoverIzquierda()">
+            Izquierda
+        </button>
+        <button type="button" onclick="MoverAbajo()">
+            Abajo
+        </button>
+
+        <button type="button" onclick="MoverDerecha()">
+            Derecha
+        </button>
+    </p>
+
+    <p>
+        <button type="button" onclick="Explorar()">
+            Explorar
         </button>
     </p>
 </div>
