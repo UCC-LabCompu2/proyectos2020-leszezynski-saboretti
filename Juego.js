@@ -47,59 +47,9 @@ function LimpiarCanvas() {
     canvas.width = canvas.width;
 
 }
-/**
- * Genera uno de los 3 tablero dependiendo de la desicion del ususario
- * @method crearTablero
- * @param {string}
- * @param {number} value-el numero de celdas
- * @return tablero
- */
-/**
-function crearTablero(value){
-    if(value==5){
-        var tablero=
-                [[0,0,0,0,0],
-                [0,0,1,0,1],
-                [1,0,0,0,0],
-                [0,1,0,3,1],
-                [0,0,0,0,0]];
-    }
-    if(value==10){
-        var tablero=
-                [[0,0,0,1,0,0,0,1,0,0],
-                [0,0,0,0,0,0,0,0,0,0],
-                [0,1,0,0,0,1,0,0,1,0],
-                [0,0,0,0,0,0,0,0,0,0],
-                [0,0,1,0,0,0,0,0,0,1],
-                [0,0,0,0,0,0,1,0,0,0],
-                [1,0,0,0,0,1,0,0,0,0],
-                [0,0,3,1,0,0,0,1,0,0],
-                [0,1,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,1,0,0,0,1]
-            ];
-            }
-    if(value==15){
-        var tablero=
-                [[0,0,0,0,1,0,0,0,1,0,0,0,1,0,1],
-                [0,0,1,0,0,1,0,0,0,0,1,0,0,1,0],
-                [0,0,0,0,0,0,0,0,1,0,0,1,0,0,0],
-                [0,0,0,1,0,1,0,0,0,0,0,0,0,0,1],
-                [1,0,0,0,0,0,0,1,0,1,0,1,0,0,0],
-                [0,0,0,0,1,0,0,0,0,0,0,0,3,0,0],
-                [0,0,1,0,0,1,0,0,1,0,0,0,0,0,1],
-                [0,0,0,0,1,0,0,1,0,0,0,0,1,0,0],
-                [0,1,0,0,0,0,0,0,0,0,1,0,0,1,0],
-                [0,0,1,0,0,1,0,0,1,0,0,0,1,0,0],
-                [0,0,0,1,0,0,0,1,0,0,1,0,0,0,0],
-                [1,0,0,0,0,1,0,0,0,0,0,0,0,0,0],
-                [0,0,1,0,0,0,0,0,1,0,0,1,0,1,0],
-                [0,0,0,0,0,1,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,1,0,0,0,0,0,1,0,0,0,1]];
-    }
-    return tablero;
-}*/
+
 var tablero=
-        [[0,0,0,1,0,0,0,1,0,0],
+    [[0,0,0,1,0,0,0,1,0,0],
         [0,0,0,0,0,0,0,0,0,0],
         [0,1,0,0,0,1,0,0,1,0],
         [0,0,0,0,0,0,0,0,0,0],
@@ -114,26 +64,46 @@ var posicionX=20;
 var posicionY=20;
 var vidas=6;
 
-    function DibujarJugador () {
-        var canvas= document.getElementById(elementid="myCanvas");
-        var ctx= canvas.getContext("2d");
+/**
+ * Genera al jugador en la posicion establecida
+ * @method DibujarJugador
+ * @param {string}
+ * @param {number}
+ * @return
+ */
+function DibujarJugador () {
+    var canvas= document.getElementById(elementid="myCanvas");
+    var ctx= canvas.getContext("2d");
 
 
-        ctx.arc(x=posicionX, y=posicionY, radius=14, starAngle=0, endAngle=2*Math.PI);
-        ctx.fillStyle = "#2233aa";
-        ctx.fill();
+    ctx.arc(x=posicionX, y=posicionY, radius=14, starAngle=0, endAngle=2*Math.PI);
+    ctx.fillStyle = "#2233aa";
+    ctx.fill();
 
 
 }
-
+/**
+ * Mueve el personaje hacia abajo
+ * @method MoverAbajo
+ * @param {string}
+ * @param {number}
+ * @return
+ */
 function MoverAbajo(){
     var canvas= document.getElementById(elementid="myCanvas");
     var ctx= canvas.getContext("2d");
 
     if(posicionY<380)posicionY+=40;
-LimpiarCanvas();
-DibujarCuadriculado();
+    LimpiarCanvas();
+    DibujarCuadriculado();
 }
+/**
+ * Mueve el personaje hacia la derecha
+ * @method MoverDerecha
+ * @param {string}
+ * @param {number}
+ * @return
+ */
 function MoverDerecha(){
     var canvas= document.getElementById(elementid="myCanvas");
     var ctx= canvas.getContext("2d");
@@ -142,32 +112,46 @@ function MoverDerecha(){
     LimpiarCanvas();
     DibujarCuadriculado();
 }
-
+/**
+ * Mueve el personaje hacia la iazquierda
+ * @method MoverIzquierda
+ * @param {string}
+ * @param {number}
+ * @return
+ */
 function MoverIzquierda(){
     var canvas= document.getElementById(elementid="myCanvas");
     var ctx= canvas.getContext("2d");
 
-   if(posicionX>20) posicionX-=40;
+    if(posicionX>20) posicionX-=40;
     LimpiarCanvas();
     DibujarCuadriculado();
 }
-
+/**
+ * Mueve el personaje hacia arriba
+ * @method MoverArriba
+ * @param {string}
+ * @param {number}
+ * @return
+ */
 function MoverArriba(){
     var canvas= document.getElementById(elementid="myCanvas");
     var ctx= canvas.getContext("2d");
-if(posicionY>20)  posicionY-=40;
+    if(posicionY>20)  posicionY-=40;
 
     LimpiarCanvas();
     DibujarCuadriculado();
 }
-
-
-
-
-
+/**
+ * Limpia el canvas y reinicia la posicion del jugador
+ * @method LimpiarCanvas1
+ * @param {string}
+ * @param {number}
+ * @return
+ */
 
 function LimpiarCanvas1(){
-        LimpiarCanvas();
+    LimpiarCanvas();
     posicionX=20;
     posicionY=20;
 
