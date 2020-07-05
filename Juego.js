@@ -33,7 +33,7 @@ function DibujarCuadriculado() {
     }
     ctx.closePath();
     DibujarJugador ();
-
+    DibujarVidas();
 
 }
 /**
@@ -49,29 +49,26 @@ function LimpiarCanvas() {
     canvas.width = canvas.width;
 
 }
-
-var tablero=
-    [[0,0,0,1,0,0,0,1,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,1,0,0,0,1,0,0,1,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,0,1,0,0,0,0,0,0,1],
-        [0,0,0,0,0,0,1,0,0,0],
-        [1,0,0,0,0,1,0,0,0,0],
-        [0,0,3,1,0,0,0,1,0,0],
-        [0,1,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,1,0,0,0,1]
-    ];
+var estado_juego=1;
 var posicionX=20;
 var posicionY=20;
 var puntaje={
     vidas:6,
     bombas:15,
-    dibujar: function(){
-        ctx.font="16px Arial";
-        ctx.fillStyle="#000000"
-        ctx.fillText("Vidas: "+this.vidas,8,20);
-    }
+
+
+}
+function DibujarVidas(){
+
+    var canvas = document.getElementById(elementid = "myCanvas2");
+    var ctx = canvas.getContext("2d");
+    canvas.width = canvas.width;
+    ctx.font="16px Arial";
+    ctx.fillStyle="#000000"
+    ctx.fillText("Vidas: "+puntaje.vidas,8,15);
+    ctx.font="16px Arial";
+    ctx.fillStyle="#000000"
+    ctx.fillText("Bombas: "+puntaje.bombas,300,15);
 
 }
 
@@ -101,14 +98,16 @@ function DibujarJugador () {
  * @param {number}
  * @return
  */
-function MoverAbajo(){
-    var canvas= document.getElementById(elementid="myCanvas");
-    var ctx= canvas.getContext("2d");
+function MoverAbajo() {
+    if (estado_juego == 1) {
+        var canvas = document.getElementById(elementid = "myCanvas");
+        var ctx = canvas.getContext("2d");
 
-    if(posicionY<380)posicionY+=40;
-    colision();
-    LimpiarCanvas();
-    DibujarCuadriculado();
+        if (posicionY < 380) posicionY += 40;
+        colision();
+        LimpiarCanvas();
+        DibujarCuadriculado();
+    }
 }
 /**
  * Mueve el personaje hacia la derecha
@@ -118,13 +117,15 @@ function MoverAbajo(){
  * @return
  */
 function MoverDerecha(){
-    var canvas= document.getElementById(elementid="myCanvas");
-    var ctx= canvas.getContext("2d");
+    if (estado_juego == 1) {
+        var canvas = document.getElementById(elementid = "myCanvas");
+        var ctx = canvas.getContext("2d");
 
-    if(posicionX<380)posicionX+=40;
-    colision();
-    LimpiarCanvas();
-    DibujarCuadriculado();
+        if (posicionX < 380) posicionX += 40;
+        colision();
+        LimpiarCanvas();
+        DibujarCuadriculado();
+    }
 }
 /**
  * Mueve el personaje hacia la iazquierda
@@ -134,13 +135,15 @@ function MoverDerecha(){
  * @return
  */
 function MoverIzquierda(){
-    var canvas= document.getElementById(elementid="myCanvas");
-    var ctx= canvas.getContext("2d");
+    if (estado_juego == 1) {
+        var canvas = document.getElementById(elementid = "myCanvas");
+        var ctx = canvas.getContext("2d");
 
-    if(posicionX>20) posicionX-=40;
-    colision();
-    LimpiarCanvas();
-    DibujarCuadriculado();
+        if (posicionX > 20) posicionX -= 40;
+        colision();
+        LimpiarCanvas();
+        DibujarCuadriculado();
+    }
 }
 /**
  * Mueve el personaje hacia arriba
@@ -150,12 +153,14 @@ function MoverIzquierda(){
  * @return
  */
 function MoverArriba(){
-    var canvas= document.getElementById(elementid="myCanvas");
-    var ctx= canvas.getContext("2d");
-    if(posicionY>20)  posicionY-=40;
-    colision();
-    LimpiarCanvas();
-    DibujarCuadriculado();
+    if (estado_juego == 1) {
+        var canvas = document.getElementById(elementid = "myCanvas");
+        var ctx = canvas.getContext("2d");
+        if (posicionY > 20) posicionY -= 40;
+        colision();
+        LimpiarCanvas();
+        DibujarCuadriculado();
+    }
 }
 /**
  * Limpia el canvas y reinicia la posicion del jugador
@@ -169,7 +174,30 @@ function LimpiarCanvas1(){
     LimpiarCanvas();
     posicionX=20;
     posicionY=20;
+    puntaje.vidas=6;
+    bomba1.status=1;
+    bomba2.status=1;
+    bomba3.status=1;
+    bomba4.status=1;
+    bomba5.status=1;
+    bomba6.status=1;
+    bomba7.status=1;
+    bomba8.status=1;
+    bomba9.status=1;
+    bomba10.status=1;
+    bomba11.status=1;
+    bomba12.status=1;
+    bomba13.status=1;
+    bomba14.status=1;
+    bomba15.status=1;
+    puntaje.bombas=15;
+    estado_juego=1;
 
+
+}
+var tesoro={
+    x:260,
+    y:260,
 }
 var bomba1={
     x:140,
@@ -250,64 +278,101 @@ function colision(){
     if(posicionX==bomba1.x && posicionY==bomba1.y&& bomba1.status==1){
         alert("BOMBA!!!");
         bomba1.status=0;
+        puntaje.vidas--;
+        puntaje.bombas--;
     }
     else if(posicionX==bomba2.x && posicionY==bomba2.y&& bomba2.status==1){
         alert("BOMBA!!!");
         bomba2.status=0;
+        puntaje.vidas--;
+        puntaje.bombas--;
     }
     else if(posicionX==bomba3.x && posicionY==bomba3.y&& bomba3.status==1){
         alert("BOMBA!!!");
         bomba3.status=0;
+        puntaje.vidas--;
+        puntaje.bombas--;
     }
     else if(posicionX==bomba4.x && posicionY==bomba4.y&& bomba4.status==1){
         alert("BOMBA!!!");
         bomba4.status=0;
+        puntaje.vidas--;
+        puntaje.bombas--;
     }
     else if(posicionX==bomba5.x && posicionY==bomba5.y&& bomba5.status==1){
         alert("BOMBA!!!");
         bomba5.status=0;
+        puntaje.vidas--;
+        puntaje.bombas--;
     }
     else if(posicionX==bomba6.x && posicionY==bomba6.y&& bomba6.status==1){
         alert("BOMBA!!!");
         bomba6.status=0;
+        puntaje.vidas--;
+        puntaje.bombas--;
     }
     else if(posicionX==bomba7.x && posicionY==bomba7.y&& bomba7.status==1){
         alert("BOMBA!!!");
         bomba7.status=0;
+        puntaje.vidas--;
+        puntaje.bombas--;
     }
     else if(posicionX==bomba8.x && posicionY==bomba8.y&& bomba8.status==1){
         alert("BOMBA!!!");
         bomba8.status=0;
+        puntaje.vidas--;
+        puntaje.bombas--;
     }
     else if(posicionX==bomba9.x && posicionY==bomba9.y&& bomba9.status==1){
         alert("BOMBA!!!");
         bomba9.status=0;
+        puntaje.vidas--;
+        puntaje.bombas--;
     }
     else if(posicionX==bomba10.x && posicionY==bomba10.y&& bomba10.status==1){
         alert("BOMBA!!!");
         bomba10.status=0;
+        puntaje.vidas--;
+        puntaje.bombas--;
     }
     else if(posicionX==bomba11.x && posicionY==bomba11.y&& bomba11.status==1){
         alert("BOMBA!!!");
         bomba11.status=0;
+        puntaje.vidas--;
+        puntaje.bombas--;
     }
     else if(posicionX==bomba12.x && posicionY==bomba12.y&& bomba12.status==1){
         alert("BOMBA!!!");
         bomba12.status=0;
+        puntaje.vidas--;
+        puntaje.bombas--;
     }
 
     else if(posicionX==bomba13.x && posicionY==bomba13.y&& bomba13.status==1){
         alert("BOMBA!!!");
         bomba13.status=0;
+        puntaje.vidas--;
+        puntaje.bombas--;
     }
     else if(posicionX==bomba14.x && posicionY==bomba14.y&& bomba14.status==1){
         alert("BOMBA!!!");
         bomba14.status=0;
+        puntaje.vidas--;
+        puntaje.bombas--;
     }
     else if(posicionX==bomba15.x && posicionY==bomba15.y&& bomba15.status==1){
         alert("BOMBA!!!");
         bomba15.status=0;
+        puntaje.vidas--;
+        puntaje.bombas--;
     }
-
+    else if(posicionX==tesoro.x && posicionY==tesoro.y){
+        alert("YOU WIN");
+        estado_juego=0;
+    }
+    if(puntaje.vidas==0){
+        alert("GAME OVER");
+        estado_juego=0;
+    }
 
 }
