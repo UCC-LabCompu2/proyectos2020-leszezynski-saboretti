@@ -32,6 +32,21 @@ function DibujarCuadriculado() {
         i = i + 400/10;
     }
     ctx.closePath();
+    Crater(bomba1);
+    Crater(bomba2);
+    Crater(bomba3);
+    Crater(bomba4);
+    Crater(bomba5);
+    Crater(bomba6);
+    Crater(bomba7);
+    Crater(bomba8);
+    Crater(bomba9);
+    Crater(bomba10);
+    Crater(bomba11);
+    Crater(bomba12);
+    Crater(bomba13);
+    Crater(bomba14);
+    Crater(bomba15);
     DibujarJugador ();
     DibujarVidas();
 
@@ -104,9 +119,10 @@ function MoverAbajo() {
         var ctx = canvas.getContext("2d");
 
         if (posicionY < 380) posicionY += 40;
-        colision();
+
         LimpiarCanvas();
         DibujarCuadriculado();
+        colision();
     }
 }
 /**
@@ -122,9 +138,10 @@ function MoverDerecha(){
         var ctx = canvas.getContext("2d");
 
         if (posicionX < 380) posicionX += 40;
-        colision();
+
         LimpiarCanvas();
         DibujarCuadriculado();
+        colision();
     }
 }
 /**
@@ -140,9 +157,10 @@ function MoverIzquierda(){
         var ctx = canvas.getContext("2d");
 
         if (posicionX > 20) posicionX -= 40;
-        colision();
+
         LimpiarCanvas();
         DibujarCuadriculado();
+        colision();
     }
 }
 /**
@@ -157,9 +175,10 @@ function MoverArriba(){
         var canvas = document.getElementById(elementid = "myCanvas");
         var ctx = canvas.getContext("2d");
         if (posicionY > 20) posicionY -= 40;
-        colision();
+
         LimpiarCanvas();
         DibujarCuadriculado();
+        colision();
     }
 }
 /**
@@ -171,28 +190,7 @@ function MoverArriba(){
  */
 
 function LimpiarCanvas1(){
-    LimpiarCanvas();
-    posicionX=20;
-    posicionY=20;
-    puntaje.vidas=6;
-    bomba1.status=1;
-    bomba2.status=1;
-    bomba3.status=1;
-    bomba4.status=1;
-    bomba5.status=1;
-    bomba6.status=1;
-    bomba7.status=1;
-    bomba8.status=1;
-    bomba9.status=1;
-    bomba10.status=1;
-    bomba11.status=1;
-    bomba12.status=1;
-    bomba13.status=1;
-    bomba14.status=1;
-    bomba15.status=1;
-    puntaje.bombas=15;
-    estado_juego=1;
-
+    location.reload();
 
 }
 var tesoro={
@@ -280,72 +278,84 @@ function colision(){
         bomba1.status=0;
         puntaje.vidas--;
         puntaje.bombas--;
+        Explosion(bomba1);
     }
     else if(posicionX==bomba2.x && posicionY==bomba2.y&& bomba2.status==1){
         alert("BOMBA!!!");
         bomba2.status=0;
         puntaje.vidas--;
         puntaje.bombas--;
+        Explosion(bomba2);
     }
     else if(posicionX==bomba3.x && posicionY==bomba3.y&& bomba3.status==1){
         alert("BOMBA!!!");
         bomba3.status=0;
         puntaje.vidas--;
         puntaje.bombas--;
+        Explosion(bomba3);
     }
     else if(posicionX==bomba4.x && posicionY==bomba4.y&& bomba4.status==1){
         alert("BOMBA!!!");
         bomba4.status=0;
         puntaje.vidas--;
         puntaje.bombas--;
+        Explosion(bomba4);
     }
     else if(posicionX==bomba5.x && posicionY==bomba5.y&& bomba5.status==1){
         alert("BOMBA!!!");
         bomba5.status=0;
         puntaje.vidas--;
         puntaje.bombas--;
+        Explosion(bomba5);
     }
     else if(posicionX==bomba6.x && posicionY==bomba6.y&& bomba6.status==1){
         alert("BOMBA!!!");
         bomba6.status=0;
         puntaje.vidas--;
         puntaje.bombas--;
+        Explosion(bomba6);
     }
     else if(posicionX==bomba7.x && posicionY==bomba7.y&& bomba7.status==1){
         alert("BOMBA!!!");
         bomba7.status=0;
         puntaje.vidas--;
         puntaje.bombas--;
+        Explosion(bomba7);
     }
     else if(posicionX==bomba8.x && posicionY==bomba8.y&& bomba8.status==1){
         alert("BOMBA!!!");
         bomba8.status=0;
         puntaje.vidas--;
         puntaje.bombas--;
+        Explosion(bomba8);
     }
     else if(posicionX==bomba9.x && posicionY==bomba9.y&& bomba9.status==1){
         alert("BOMBA!!!");
         bomba9.status=0;
         puntaje.vidas--;
         puntaje.bombas--;
+        Explosion(bomba9);
     }
     else if(posicionX==bomba10.x && posicionY==bomba10.y&& bomba10.status==1){
         alert("BOMBA!!!");
         bomba10.status=0;
         puntaje.vidas--;
         puntaje.bombas--;
+        Explosion(bomba10);
     }
     else if(posicionX==bomba11.x && posicionY==bomba11.y&& bomba11.status==1){
         alert("BOMBA!!!");
         bomba11.status=0;
         puntaje.vidas--;
         puntaje.bombas--;
+        Explosion(bomba11);
     }
     else if(posicionX==bomba12.x && posicionY==bomba12.y&& bomba12.status==1){
         alert("BOMBA!!!");
         bomba12.status=0;
         puntaje.vidas--;
         puntaje.bombas--;
+        Explosion(bomba12);
     }
 
     else if(posicionX==bomba13.x && posicionY==bomba13.y&& bomba13.status==1){
@@ -353,26 +363,96 @@ function colision(){
         bomba13.status=0;
         puntaje.vidas--;
         puntaje.bombas--;
+        Explosion(bomba13);
     }
     else if(posicionX==bomba14.x && posicionY==bomba14.y&& bomba14.status==1){
         alert("BOMBA!!!");
         bomba14.status=0;
         puntaje.vidas--;
         puntaje.bombas--;
+        Explosion(bomba14);
     }
     else if(posicionX==bomba15.x && posicionY==bomba15.y&& bomba15.status==1){
         alert("BOMBA!!!");
         bomba15.status=0;
         puntaje.vidas--;
         puntaje.bombas--;
+        Explosion(bomba15);
     }
     else if(posicionX==tesoro.x && posicionY==tesoro.y){
+        setInterval(Animar, 40);
         alert("YOU WIN");
         estado_juego=0;
+
     }
     if(puntaje.vidas==0){
         alert("GAME OVER");
         estado_juego=0;
     }
+
+}
+function Explosion(bomba) {
+    var canvas = document.getElementById(elementid = "myCanvas");
+    var ctx = canvas.getContext("2d");
+
+
+    var img = new Image();
+    img.src="Imagenes/Explosion.png";
+
+    img.onload = function () {
+        ctx.drawImage(img, x=bomba.x-19, y=bomba.y-19, 38, 38);
+    }
+}
+function Crater(bomba){
+    var canvas = document.getElementById(elementid = "myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    if(bomba.status==0){
+        var img = new Image();
+        img.src="Imagenes/Crater.png";
+
+        img.onload = function () {
+            ctx.drawImage(img, x=bomba.x-19, y=bomba.y-19, 38, 38);
+        }
+    }
+}
+
+y1=0;
+dy1=1;
+
+function Animar(){
+    var canvas = document.getElementById(elementid = "myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    var img1 = new Image();
+    img1.src="Imagenes/chest/1.png";
+    var img2 = new Image();
+    img2.src="Imagenes/chest/2.png";
+    var img3 = new Image();
+    img3.src="Imagenes/chest/3.png";
+    var img4 = new Image();
+    img4.src="Imagenes/chest/4.png";
+
+    if(y1<10){
+        img1.onload = function(){
+            ctx.drawImage(img1, dx= tesoro.x-19, dy=tesoro.y-19,38, 38 );
+        }
+    }
+    if(y1>=10&&y1<20){
+        img1.onload = function(){
+            ctx.drawImage(img2, dx= tesoro.x-19, dy=tesoro.y-19,38, 38 );
+        }
+    }
+    if(y1>=20&&y1<30){
+        img1.onload = function(){
+            ctx.drawImage(img3, dx= tesoro.x-19, dy=tesoro.y-19,38, 38 );
+        }
+    }
+    if(y1>=30&&y1<40){
+        img1.onload = function(){
+            ctx.drawImage(img4, dx= tesoro.x-19, dy=tesoro.y-19,38, 38 );
+        }
+    }
+    y1+=dy1;
 
 }
