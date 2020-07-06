@@ -19,15 +19,20 @@ div{
     color: darkgrey;
 }
 #boton{
-    float: left;
+    float: right;
     width: 80px;
 
 }
 .configuracion{
-    text-align: right;
+    column-count: 3;
+    text-align: left;
     margin: 15px 35px;
 
 }
 .Arriba{
     margin:0px 69px;
+}
+.Canvas{
+    Margin: 300px 0px;
+    text-align: center;
 }

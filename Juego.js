@@ -456,3 +456,39 @@ function Animar(){
     y1+=dy1;
 
 }
+var s=0;
+function explorar(bomba){
+    if(posicionX-40==bomba.x&&posicionY==bomba.y&&bomba.status==1){
+        s++;
+    }
+    if(posicionX+40==bomba.x&&posicionY==bomba.y&&bomba.status==1){
+        s++;
+    }
+    if(posicionX==bomba.x&&posicionY+40==bomba.y&&bomba.status==1){
+        s++;
+    }
+    if(posicionX==bomba.x&&posicionY-40==bomba.y&&bomba.status==1){
+        s++;
+    }
+}
+
+function BotonExplorar(){
+    s=0;
+    explorar(bomba1);
+    explorar(bomba2);
+    explorar(bomba3);
+    explorar(bomba4);
+    explorar(bomba5);
+    explorar(bomba6);
+    explorar(bomba7);
+    explorar(bomba8);
+    explorar(bomba9);
+    explorar(bomba10);
+    explorar(bomba11);
+    explorar(bomba12);
+    explorar(bomba13);
+    explorar(bomba14);
+    explorar(bomba15);
+
+    alert("Hay un total de "+s+" bombas en su inmediatez");
+}
