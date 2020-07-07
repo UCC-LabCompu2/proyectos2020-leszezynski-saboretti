@@ -64,15 +64,24 @@ function LimpiarCanvas() {
     canvas.width = canvas.width;
 
 }
+
+
 var estado_juego=1;
 var posicionX=20;
 var posicionY=20;
 var puntaje={
     vidas:6,
     bombas:15,
-
-
 }
+
+/**
+ * Muestra en un nuevo canvas el numero de vidas y bombas que hay en el tablero
+ * @method DibujarVidas
+ * @param {string}
+ * @param {number}
+ * @return
+ */
+
 function DibujarVidas(){
 
     var canvas = document.getElementById(elementid = "myCanvas2");
@@ -193,6 +202,8 @@ function LimpiarCanvas1(){
     location.reload();
 
 }
+
+
 var tesoro={
     x:260,
     y:260,
@@ -272,6 +283,13 @@ var bomba15={
     y:380,
     status:1
 }
+/**
+ * Detecta si al moverse el jugador se topa con una bomba o el tesoro
+ * @method colision
+ * @param {string}
+ * @param {number}
+ * @return
+ */
 function colision(){
     if(posicionX==bomba1.x && posicionY==bomba1.y&& bomba1.status==1){
         alert("BOMBA!!!");
@@ -391,6 +409,13 @@ function colision(){
     }
 
 }
+/**
+ * Dibuja la explosion de una bomba
+ * @method Explosion
+ * @param {string} bomba-de cual de las 15 bombas se toman los parametros
+ * @param {number}
+ * @return
+ */
 function Explosion(bomba) {
     var canvas = document.getElementById(elementid = "myCanvas");
     var ctx = canvas.getContext("2d");
@@ -403,6 +428,13 @@ function Explosion(bomba) {
         ctx.drawImage(img, x=bomba.x-19, y=bomba.y-19, 38, 38);
     }
 }
+/**
+ * Dibuja el crater tras la explosion de una bomba
+ * @method Crater
+ * @param {string} bomba-de cual de las 15 bombas se toman los parametros
+ * @param {number}
+ * @return
+ */
 function Crater(bomba){
     var canvas = document.getElementById(elementid = "myCanvas");
     var ctx = canvas.getContext("2d");
@@ -419,6 +451,13 @@ function Crater(bomba){
 
 y1=0;
 dy1=1;
+/**
+ * Anima el tesoro al ser encontrado
+ * @method Animar
+ * @param {string}
+ * @param {number}
+ * @return
+ */
 
 function Animar(){
     var canvas = document.getElementById(elementid = "myCanvas");
@@ -455,4 +494,53 @@ function Animar(){
     }
     y1+=dy1;
 
+}
+var s=0;
+/**
+ * Indica si la bomba establecida esta a un movimiento de distancia del jugador
+ * @method explorar
+ * @param {string} bomba-de cual de las 15 bombas se toman los parametros
+ * @param {number}
+ * @return
+ */
+function explorar(bomba){
+    if(posicionX-40==bomba.x&&posicionY==bomba.y&&bomba.status==1){
+        s++;
+    }
+    if(posicionX+40==bomba.x&&posicionY==bomba.y&&bomba.status==1){
+        s++;
+    }
+    if(posicionX==bomba.x&&posicionY+40==bomba.y&&bomba.status==1){
+        s++;
+    }
+    if(posicionX==bomba.x&&posicionY-40==bomba.y&&bomba.status==1){
+        s++;
+    }
+}
+/**
+ * Utiliza la funcion explorar para cada una de las bombas
+ * @method explorar
+ * @param {string}
+ * @param {number}
+ * @return
+ */
+function BotonExplorar(){
+    s=0;
+    explorar(bomba1);
+    explorar(bomba2);
+    explorar(bomba3);
+    explorar(bomba4);
+    explorar(bomba5);
+    explorar(bomba6);
+    explorar(bomba7);
+    explorar(bomba8);
+    explorar(bomba9);
+    explorar(bomba10);
+    explorar(bomba11);
+    explorar(bomba12);
+    explorar(bomba13);
+    explorar(bomba14);
+    explorar(bomba15);
+
+    alert("Hay un total de "+s+" bombas en su inmediatez");
 }
