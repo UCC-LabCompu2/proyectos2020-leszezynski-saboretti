@@ -30,9 +30,17 @@ div{
 
 }
 .Arriba{
-    margin:0px 69px;
+    margin:0px 60px;
 }
 .Canvas{
     Margin: 300px 0px;
     text-align: center;
+}
+
+.Flechas{
+    width:40px;
+
+}
+.Utilidades{
+    width: 60px;
 }
