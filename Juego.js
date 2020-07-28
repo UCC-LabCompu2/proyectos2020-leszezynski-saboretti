@@ -1,8 +1,6 @@
 /**
  * Dibuja la cuadricula segun el parametro dado por el usuario
  * @method DibujarCuadriculado
- * @param {string}
- * @param {number}
  * @return
  */
 function DibujarCuadriculado() {
@@ -54,8 +52,6 @@ function DibujarCuadriculado() {
 /**
  * Limpia el canvas para poder crear otro cuadriculado
  * @method LimpiarCanvas
- * @param {string}
- * @param {number}
  * @return
  */
 function LimpiarCanvas() {
@@ -77,8 +73,6 @@ var puntaje={
 /**
  * Muestra en un nuevo canvas el numero de vidas y bombas que hay en el tablero
  * @method DibujarVidas
- * @param {string}
- * @param {number}
  * @return
  */
 
@@ -100,8 +94,6 @@ function DibujarVidas(){
 /**
  * Genera al jugador en la posicion establecida
  * @method DibujarJugador
- * @param {string}
- * @param {number}
  * @return
  */
 function DibujarJugador () {
@@ -118,8 +110,6 @@ function DibujarJugador () {
 /**
  * Mueve el personaje hacia abajo
  * @method MoverAbajo
- * @param {string}
- * @param {number}
  * @return
  */
 function MoverAbajo() {
@@ -137,8 +127,6 @@ function MoverAbajo() {
 /**
  * Mueve el personaje hacia la derecha
  * @method MoverDerecha
- * @param {string}
- * @param {number}
  * @return
  */
 function MoverDerecha(){
@@ -156,8 +144,6 @@ function MoverDerecha(){
 /**
  * Mueve el personaje hacia la iazquierda
  * @method MoverIzquierda
- * @param {string}
- * @param {number}
  * @return
  */
 function MoverIzquierda(){
@@ -175,8 +161,6 @@ function MoverIzquierda(){
 /**
  * Mueve el personaje hacia arriba
  * @method MoverArriba
- * @param {string}
- * @param {number}
  * @return
  */
 function MoverArriba(){
@@ -193,8 +177,6 @@ function MoverArriba(){
 /**
  * Limpia el canvas y reinicia la posicion del jugador
  * @method LimpiarCanvas1
- * @param {string}
- * @param {number}
  * @return
  */
 
@@ -224,8 +206,8 @@ var bomba3={
     status:1
 }
 var bomba4={
-    x:60,
-    y:100,
+    x:380,
+    y:380,
     status:1
 }
 var bomba5={
@@ -286,8 +268,6 @@ var bomba15={
 /**
  * Detecta si al moverse el jugador se topa con una bomba o el tesoro
  * @method colision
- * @param {string}
- * @param {number}
  * @return
  */
 function colision(){
@@ -405,6 +385,7 @@ function colision(){
     }
     if(puntaje.vidas==0){
         alert("GAME OVER");
+        DibujarVidas();
         estado_juego=0;
     }
 
@@ -413,7 +394,6 @@ function colision(){
  * Dibuja la explosion de una bomba
  * @method Explosion
  * @param {string} bomba-de cual de las 15 bombas se toman los parametros
- * @param {number}
  * @return
  */
 function Explosion(bomba) {
@@ -432,7 +412,6 @@ function Explosion(bomba) {
  * Dibuja el crater tras la explosion de una bomba
  * @method Crater
  * @param {string} bomba-de cual de las 15 bombas se toman los parametros
- * @param {number}
  * @return
  */
 function Crater(bomba){
@@ -454,8 +433,6 @@ dy1=1;
 /**
  * Anima el tesoro al ser encontrado
  * @method Animar
- * @param {string}
- * @param {number}
  * @return
  */
 
@@ -500,7 +477,6 @@ var s=0;
  * Indica si la bomba establecida esta a un movimiento de distancia del jugador
  * @method explorar
  * @param {string} bomba-de cual de las 15 bombas se toman los parametros
- * @param {number}
  * @return
  */
 function explorar(bomba){
@@ -520,8 +496,6 @@ function explorar(bomba){
 /**
  * Utiliza la funcion explorar para cada una de las bombas
  * @method explorar
- * @param {string}
- * @param {number}
  * @return
  */
 function BotonExplorar(){
